@@ -117,7 +117,7 @@ Then let's grab the dodger again
 var dodger = document.getElementById('dodger')
 ```
 
-and workon that function:
+and work on that function:
 
 ``` javascript
 function moveDodgerLeft() {
