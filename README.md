@@ -52,7 +52,7 @@ dodger.style.left // "180px"
 dodger.style.bottom // "0px"
 ```
 
-So the dodger's bottom left edge is currently at (180, 0). (Keep in mind that these coordinates are relative to the block box.)
+So the dodger's bottom left edge is currently at (180, 0). (Keep in mind that these coordinates are relative to the black box.)
 
 Let's start by moving the element up.
 
