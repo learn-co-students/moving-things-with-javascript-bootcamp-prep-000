@@ -41,7 +41,7 @@ Awesome.
 
 ![pink dodger](https://curriculum-content.s3.amazonaws.com/skills-based-js/pink_dodger.png)
 
-What have we been doing here? Well, we've been accessing the `style` property of the `dodger` element. This let's us change things like the `backgroundColor`, the `height`, `width`, etc.
+What have we been doing here? Well, we've been accessing the `style` property of the `dodger` element. This lets us change things like the `backgroundColor`, the `height`, `width`, etc.
 
 We can also, it turns out, change an element's position on the page.
 
