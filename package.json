@@ -2,10 +2,6 @@
   "name": "moving-things-with-java-script",
   "version": "0.1.0",
   "description": "Practice animating elements on the page with JavaScript",
-  "engines": {
-    "node": "6.x",
-    "npm": "3.x"
-  },
   "main": "index.js",
   "scripts": {
   },
