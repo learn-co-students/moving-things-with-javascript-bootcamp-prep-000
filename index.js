@@ -9,12 +9,6 @@ function moveDodgerLeft() {
   }
 }
 
-document.addEventListener('keydown', function(e) {
-  if (e.which === 37) {
-    moveDodgerLeft()
-  }
-})
-
 function moveDodgerRight() {
   var rightNumbers = getComputedStyle(dodger, null).right.replace('px', '')
   var right = parseInt(rightNumbers, 10)
@@ -27,7 +21,9 @@ function moveDodgerRight() {
 }
 
 document.addEventListener('keydown', function(e) {
-  if (e.which === 39) {
+  if (e.which === 37) {
+    moveDodgerLeft()
+  } else if (e.which === 39) {
     moveDodgerRight()
   }
 })
