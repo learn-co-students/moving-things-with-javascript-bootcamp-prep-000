@@ -9,8 +9,45 @@
     <div id="game">
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
-    <script>
-      // your code here
-    </script>
+    <script>  // remove 'src' attribute later, if needed
+    
+    const game = document.getElementById('game');
+    const dodger = document.getElementById('dodger');
+    
+    //
+    //  element.style.width did not work; returned " "
+    // element.style only works on inline style settings, so fails because these are set in a style sheet
+    //  element.offsetWidth, element.clientWidth and getComputedStyle(element).width work
+    //
+    // used element.clientWidth = includes padding; excludes borders, margins and scrollbars
+    // returns integer that is the px value of the width
+    //
+    const gameWidth = game.clientWidth;
+    const dodgerWidth = dodger.clientWidth;
+    
+    const rightEdgeLimit = gameWidth - dodgerWidth;  // dodger left side pos when right side hits right edge of game
+        
+    function moveLeft () {
+      var leftEdgeLoc = parseInt(dodger.style.left, 10);       // parseInt stops at the 'px' in style.left
+      if (leftEdgeLoc  > 0) {
+        dodger.style.left=`${leftEdgeLoc-1}px`;
+      }
+    }
+    
+    function moveRight() {
+    // console.log ("right is " + dodger.style.right);
+      var leftEdgeLoc = parseInt(dodger.style.left, 10);       // parseInt stops at the 'px' in style.left
+      if (leftEdgeLoc < rightEdgeLimit) {
+        dodger.style.left = `${leftEdgeLoc + 1}px`;
+      }
+    }
+        
+    document.addEventListener('keydown', function(e) {
+        if (e.which === 37) {
+            moveLeft();
+        } else if (e.which === 39) {
+            moveRight();
+        }
+    })    </script>
   </body>
 </html>
