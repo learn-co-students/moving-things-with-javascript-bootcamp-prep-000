@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "description": "Practice animating elements on the page with JavaScript",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/learn-co-curriculum/moving-things-with-java-script.git"
