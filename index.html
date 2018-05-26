@@ -11,6 +11,46 @@
     </div>
     <script>
       // your code here
+      
+      //window.onbeforeunload = function(){ return 'Reload?';}
+      //The above code is only needed when I don't want the console refreshed.
+document.addEventListener("keydown", function(e) {
+    console.log(e.which);
+})
+var dodger = document.getElementById('dodger')
+function moveDodgerLeft() {
+    var leftNumbers = dodger.style.left.replace("px", "");
+    var left = parseInt(leftNumbers, 10);
+    
+    if(left > 0) {
+        dodger.style.left = `${left - 1}px`;
+    }
+}
+document.addEventListener('keydown', function(e) {
+    if(e.which === 37) {
+        moveDodgerLeft();
+    }
+})
+// Note that dodger.style.left is already specified, so I shouldn't specify dodger.style.right. The workaround for moveDodgerRight is to find the width of the container box. In this case, it is 400px.
+// For the fun of it, I’ll change the color of the dodger to pink.
+dodger.style.backgroundColor = '#FF69B4';
+function moveDodgerRight() {
+    // Same leftNumbers variable as in moveDodgerLeft
+    var leftNumbers = dodger.style.left.replace('px', '');
+    var right = parseInt(leftNumbers, 10); 
+    
+    /* The width of the game (the black box) is 400px. I do not know how to access that value at this time. Also, I have to remember that I am doing this in relation to the LEFT part of the dodger, so I have to take the dodger’s width into account as well. It’s width is 40px, so I have to stop it when the left part of dodger is (400-40 = 360)px to the right of the left edge (confusing!) of the black box. */
+    if(right < 360) {
+        dodger.style.left = `${right + 1}px`;
+    }
+}
+document.addEventListener('keydown', function(e) {
+    if(e.which === 39) {
+        moveDodgerRight();
+    }
+})
+// Maybe I should change the names of some of those variables to alleviate confusion…
+
     </script>
   </body>
 </html>
