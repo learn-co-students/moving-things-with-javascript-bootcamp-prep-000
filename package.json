@@ -4,6 +4,7 @@
   "description": "Practice animating elements on the page with JavaScript",
   "main": "index.js",
   "scripts": {
+    "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
   },
   "repository": {
     "type": "git",
