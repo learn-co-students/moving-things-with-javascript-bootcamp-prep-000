@@ -1,4 +1,4 @@
-const expect = require('expect')
+const assert = require('assert')
 
 const fs = require('fs')
 const jsdom = require('mocha-jsdom')
@@ -13,6 +13,6 @@ describe('index', () => {
   
 
   it('runs', () => {
-    expect(true).to.be.true
+    assert.equal(true, true)
   })
 })
