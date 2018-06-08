@@ -11,6 +11,44 @@
     </div>
     <script>
       // your code here
+    // call init
+    init(5);
+
+
+var dodger = null;
+var keyEventTrigger = null;
+var speed = 0;
+
+function init(dodgeSpeed)
+{
+  // set speed var
+  speed = dodgeSpeed;
+  
+  // get the dodger element
+  dodger = document.getElementById('dodger')
+  
+  // start an event listener
+  keyEventTrigger = document.addEventListener('keydown', function(keyPress){
+    if(keyPress === 37)
+    {
+      console.log("-1");
+      return -1 * speed;
+    }
+    if(keyPress === 39)
+    {
+      console.log("1");
+      return 1 * speed;
+    }
+  });
+}
+
+// instead of making two functions, and having upkeep twice, merge left and right into 
+// one function call movement(direction)
+
+function dodgerMovement(direction)
+{
+  
+}
     </script>
   </body>
 </html>
