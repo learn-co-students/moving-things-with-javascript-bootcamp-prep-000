@@ -11,44 +11,54 @@
     </div>
     <script>
       // your code here
-    // call init
-    init(5);
-
-
-var dodger = null;
-var keyEventTrigger = null;
-var speed = 0;
-
-function init(dodgeSpeed)
-{
-  // set speed var
-  speed = dodgeSpeed;
-  
-  // get the dodger element
-  dodger = document.getElementById('dodger')
-  
-  // start an event listener
-  keyEventTrigger = document.addEventListener('keydown', function(keyPress){
-    if(keyPress === 37)
-    {
-      console.log("-1");
-      return -1 * speed;
-    }
-    if(keyPress === 39)
-    {
-      console.log("1");
-      return 1 * speed;
-    }
-  });
-}
-
-// instead of making two functions, and having upkeep twice, merge left and right into 
-// one function call movement(direction)
-
-function dodgerMovement(direction)
-{
-  
-}
+      
+      // get the dodger element
+      var dodger = document.getElementById('dodger');
+      
+      // set speed var
+      var speed = 5;
+      
+      // start an event listener
+      keyEventTrigger = document.addEventListener('keydown', function(keyPress){
+          if(keyPress.which === 37)
+          {
+            console.log("-1");
+            dodgerMovement(-1, speed);
+          }
+          if(keyPress.which === 39)
+          {
+            console.log("1");
+            dodgerMovement(1, speed);
+          }
+        });
+      
+      // instead of making two functions, and having upkeep twice, merge left and right into 
+      // one function call movement(direction)
+      
+      function dodgerMovement(direction, speed)
+      {
+        // take out the px portion
+        var currentPosition = dodger.style.left.replace('px','');
+        
+        // convert the string to an int
+        var currentPosition = parseInt(currentPosition, 10);
+        
+        // find the new position
+        var newPosition = currentPosition += (speed * direction);
+        
+        // clamp new position to the end stops
+        if(newPosition >= 360)
+        {
+          newPosition = 360;
+        }
+        if(newPosition <= 0)
+        {
+          newPosition = 0;
+        }
+        
+        // set the style left property by pushing direction
+        dodger.style.left = `${newPosition}px`;
+      }
     </script>
   </body>
 </html>
