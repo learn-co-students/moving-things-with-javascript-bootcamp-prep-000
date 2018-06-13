@@ -9,8 +9,35 @@
     <div id="game">
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
     <script>
       // your code here
+      var dodger = document.getElementID('dodger')
+      
+      function moveDodgerRight(){
+        var rightNumbers = dodger.style.left.replace('px', '')
+        var right = parseInt(rightNumbers, 10)
+        if (right < 360){
+            dodger.style.left = `${right + 1}px`
+        }
+      }
+      
+      function moveDodgerLeft(){
+          var leftNumbers = dodger.style.left.replace('px', '')
+          var left = parseInt(leftNumbers, 10)
+          if(left > 0){
+              dodger.style.left = `${left - 1}px`
+          }
+      }
+      
+      document.addEventListener('keydown', function(e){ 
+          if(e.which == 37){  
+              moveDodgerLeft() 
+          }
+          else if(e.which == 39){
+              moveDodgerRight()
+          }
+      })
     </script>
   </body>
 </html>
