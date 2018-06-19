@@ -11,6 +11,41 @@
     </div>
     <script>
       // your code here
+      var dodger = document.getElementById('dodger');
+
+//functions
+
+function moveDodgerLeft() {
+  var leftNumbers = dodger.style.left.replace('px', '')
+  var left = parseInt(leftNumbers, 10)
+ 
+  if (left > 0) {
+    dodger.style.left = `${left - 1}px`
+  }
+}
+
+// div.game is 400px wide, div.dodger is 40px wide with no right style
+// can i use left < 360px or will the test make me either add to HTML manually or add style attribute with javaScript?
+function moveDodgerRight() {
+  var leftNumbers = dodger.style.left.replace('px','');
+  var left = parseInt(leftNumbers, 10);
+
+  if (left < 360) {
+    dodger.style.left = `${left + 1}px`;
+  }
+}
+
+//eventlistener
+
+document.addEventListener('keydown', function(e){
+  if (e.which === 37) {
+    moveDodgerLeft()
+  }
+
+  if (e.which === 39) {
+    moveDodgerRight()
+  }
+})
     </script>
   </body>
 </html>
