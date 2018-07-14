@@ -11,6 +11,44 @@
     </div>
     <script>
       // your code here
+      
+      var dodger= document.getElementById('dodger');
+
+
+function moveDodgerLeft(){
+  var leftNum = dodger.style.left.replace('px','');
+  var left = parseInt(leftNum,10);
+  
+  if(left>0){
+    dodger.style.left = `${left-1}px`;
+  }
+}
+      document.addEventListener('keydown', function(e){
+        if(e.which ===37){
+          var leftNum = dodger.style.left.replace('px','');
+          var left = parseInt(leftNum,10);
+          dodger.style.left= `${left-1}px`;
+        }
+      });
+      
+      //moving right
+      document.addEventListener('keydown', function(e){
+        if(e.which ===39){
+          var rightNum = dodger.style.left.replace('px','');
+          var right = parseInt(rightNum,10);
+          dodger.style.right= `${right-1}px`;
+        }
+      });
+      
+      document.addEventListener('keydown', function(e){
+        if(e.which===37){
+          moveDodgerLeft();
+        }
+        if(e.which ===39){
+          moveDodgerRight();
+        }
+      });
+      
     </script>
   </body>
 </html>
