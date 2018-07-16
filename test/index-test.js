@@ -12,7 +12,6 @@ describe('index', () => {
   })
   
 
-  it('runs', () => {
-    expect(true).to.be.true
-  })
-})
+ 1) index runs:
+     TypeError: Cannot read property 'be' of undefined
+      at Context.it (test/index-test.js:16:20)
