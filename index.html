@@ -11,6 +11,50 @@
     </div>
     <script>
       // your code here
+      
+      let dodger = document.getElementById('dodger');
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.which === 37) {
+          moveDodgerLeft();
+        } else if (e.which === 39) {
+          moveDodgerRight();
+        } else if (e.which === 38 ) {
+          moveDodgerUp();
+        } else if (e.which === 40 ) {
+          moveDodgerDown();
+        }
+      });
+      
+      function moveDodgerLeft() {
+        let currentX = parseInt(dodger.style.left, 10);
+        if (currentX > 0) {
+          dodger.style.left = `${currentX-10}px`;
+        }
+        
+      }
+      
+      function moveDodgerRight() {
+        let currentX = parseInt(dodger.style.left, 10);
+        if (currentX < 360) {
+          dodger.style.left = `${currentX+10}px`;
+        }
+      }
+      
+      function moveDodgerUp() {
+        let currentY = parseInt(dodger.style.bottom, 10);
+        if (currentY < 360) {
+          dodger.style.bottom = `${currentY+10}px`;
+        }
+      }
+      
+      function moveDodgerDown() {
+        let currentY = parseInt(dodger.style.bottom, 10);
+        if (currentY > 0) {
+          dodger.style.bottom = `${currentY-10}px`;
+        }
+      }
+      
     </script>
   </body>
 </html>
