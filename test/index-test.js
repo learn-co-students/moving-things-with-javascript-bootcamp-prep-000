@@ -1,4 +1,8 @@
+//console.log('whoa');
+
 const expect = require('expect')
+
+console.log('hello');
 
 const fs = require('fs')
 const jsdom = require('mocha-jsdom')
