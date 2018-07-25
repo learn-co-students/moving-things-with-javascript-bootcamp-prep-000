@@ -14,6 +14,8 @@
       
       let dodger = document.getElementById('dodger');
       
+      dodger.style.backgroundColor = '#0198E1'
+      
       document.addEventListener('keydown', (e) => {
         if (e.which === 37) {
           moveDodgerLeft();
@@ -29,7 +31,7 @@
       function moveDodgerLeft() {
         let currentX = parseInt(dodger.style.left, 10);
         if (currentX > 0) {
-          dodger.style.left = `${currentX-10}px`;
+          dodger.style.left = `${currentX-1}px`;
         }
         
       }
@@ -37,7 +39,7 @@
       function moveDodgerRight() {
         let currentX = parseInt(dodger.style.left, 10);
         if (currentX < 360) {
-          dodger.style.left = `${currentX+10}px`;
+          dodger.style.left = `${currentX+1}px`;
         }
       }
       

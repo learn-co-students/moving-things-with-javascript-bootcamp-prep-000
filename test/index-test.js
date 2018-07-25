@@ -1,8 +1,9 @@
-const expect = require('expect')
+const expect = require('expect');
 
-const fs = require('fs')
-const jsdom = require('mocha-jsdom')
-const path = require('path')
+const fs = require('fs');
+const jsdom = require('mocha-jsdom');
+const path = require('path');
+const someTrue = true;
 
 
 describe('index', () => {
@@ -13,6 +14,6 @@ describe('index', () => {
   
 
   it('runs', () => {
-    expect(true).to.be.true
+    expect(someTrue).toBe.true
   })
 })
