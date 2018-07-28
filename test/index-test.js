@@ -12,7 +12,7 @@ describe('index', () => {
   })
   
 
-  it('runs', () => {
-    expect(true).to.be.true
-  })
+  // it('runs', () => {
+  //   expect(true).to.be.true
+  // })
 })
