@@ -2,12 +2,6 @@ const app = "I don't do much."
 
 var dodger = document.getElementById('dodger');
 dodger.style.backgroundColor = '#FF69B4';
-dodger.style.left;
-dodger.style.bottom;
-console.log(dodger.style.left);
-console.log(dodger.style.top);
-console.log(dodger.style.right);
-console.log(dodger.style.bottom);
 
 document.addEventListener('keydown', function(e) {
   if (e.which === 37) {
