@@ -4,7 +4,6 @@ const fs = require('fs')
 const jsdom = require('mocha-jsdom')
 const path = require('path')
 
-
 describe('index', () => {
 
   jsdom({
@@ -16,3 +15,8 @@ describe('index', () => {
     expect(true).toBe.true
   })
 })
+function moveDodgerRight(){
+const app = "I don't do anything."
+var dodger = document.getElementById('dodger')
+ dodger.style.backgroundColor = "000000";
+}
