@@ -11,6 +11,16 @@
     </div>
     <script>
       // your code here
+      const dodger = document.getElementById('dodger');
+      document.addEventListener('keydown', function(key) {
+        let left = parseInt(dodger.style.left.replace('px', ''), 10);
+        let right = parseInt(getComputedStyle(dodger).right.replace('px', ''), 10);
+        if(key.which === 37 && left > 0) {
+          dodger.style.left = `${left - 1}px`;
+        } else if(key.which === 39 && right > 0) {
+          dodger.style.left = `${left + 1}px`;
+        }
+      })
     </script>
   </body>
 </html>
