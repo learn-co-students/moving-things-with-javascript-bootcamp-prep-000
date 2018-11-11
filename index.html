@@ -11,6 +11,18 @@
     </div>
     <script>
       // your code here
+      var dodger = document.getElementById('dodger');
+      document.addEventListener('keydown', (e) => {
+        if (e.which == 38) {
+          let rightNumbers = 
+            dodger.style.right.replace('px', '');
+          let rightCoordinate = 
+            parseInt(rightNumbers);
+          if (dodger.style.right > 0) {
+            dodger.style.right = `${right - 1}px`;
+          }
+        }
+      });
     </script>
   </body>
 </html>
