@@ -11,6 +11,55 @@
     </div>
     <script>
       // your code here
+      var dodger = document.getElementById('dodger');
+      dodger.style.backgroundColor = '#FF69B4';
+      dodger.style.bottom = '100px';
+      document.addEventListener('keydown', function(e) {
+        console.log(e.which)
+      })
+      document.addEventListener('keydown', function(e) {
+        if (e.which === 37) {
+          var leftNumbers = dodger.style.left.replace('px', '')
+          var left = parseInt(leftNumbers, 10)
+
+          dodger.style.left = `${left - 1}px`
+        }
+      });
+      var dodger = document.getElementById('dodger')
+      function moveDodgerLR(dir) {
+        var leftNumbers = dodger.style.left.replace('px', '')
+        var left = parseInt(leftNumbers, 10)
+
+        if (dir === 'l') {
+          dodger.style.left = `${left - 1}px`
+        } else if (dir === 'r'){
+          dodger.style.left = `${left + 1}px`
+        }
+      }
+      function moveDodgerUD(dir) {
+        var bottomNumbers = dodger.style.bottom.replace('px', '')
+        var bottom = parseInt(bottomNumbers, 10)
+
+        if (dir === 'u'){
+          dodger.style.bottom = `${bottom + 1}px`
+        } else if (dir === 'd'){
+          dodger.style.bottom = `${bottom - 1}px`
+        }
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.which === 37) {
+          moveDodgerLR('l')
+        }
+        else if (e.which === 39) {
+          moveDodgerLR('r')
+        }
+        else if (e.which === 38) {
+          moveDodgerUD('u')
+        }
+        else if (e.which === 40) {
+          moveDodgerUD('d')
+        }
+      })
     </script>
   </body>
 </html>
