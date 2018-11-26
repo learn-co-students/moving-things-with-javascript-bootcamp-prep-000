@@ -5,7 +5,7 @@ Moving Things with JavaScript
 
 1. Explain how to update an element's position on the page
 2. Practice updating an element's position on the page
-3. Practice moving an element in response to a browser event
+3. Practicea moving an element in response to a browser event
 
 ## Introduction
 
