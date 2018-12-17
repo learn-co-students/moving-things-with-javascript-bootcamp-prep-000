@@ -23,7 +23,7 @@ Open up `index.html` in your favorite browser (we'll be using Chrome). Open the 
 var dodger = document.getElementById('dodger')
 ```
 
-Awesome. Now let's change its color:
+Awesome. Now let's change its color:test
 
 ``` javascript
 dodger.style.backgroundColor = "#000000"
