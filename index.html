@@ -9,8 +9,19 @@
     <div id="game">
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
+    <script type="text/javascript" src="index.js"></script>
     <script>
-      // your code here
+      document.addEventListener('keydown', function(e) {
+        var LeftArrowKeyCode = 37
+        var RightArrowKeyCode = 39
+        
+        if (e.which === LeftArrowKeyCode) {
+          moveDodgerLeft()
+        } else if  (e.which === RightArrowKeyCode) {
+          moveDodgerRight()
+        }
+        
+      })
     </script>
   </body>
 </html>
