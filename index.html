@@ -10,7 +10,33 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+      var dodger = $('dodger')
+      function moveDodgerLeft() {
+        var leftNumbers = dodger.style.left.replace('px', '')
+        var left = parseInt(leftNumbers, 10)
+
+        if (left > 0) {
+          dodger.style.left = `${left-1}px`
+        }
+      }
+
+      function moveDodgerRight() {
+        var rightNumbers = dodger.style.right.replace('px', '')
+        var right = parseInt(rightnumbers, 10)
+
+        if (right > 0) {
+          dodger.style.right = `${right-1}px`
+        }
+      }
+
+      document.on('keydown', function(e) {
+        if (e.which === 37) {
+          moveDodgerLeft()
+        } else if (e.whch === 39) {
+          moveDodgerRight()
+        }
+      })
+
     </script>
   </body>
 </html>
