@@ -11,23 +11,22 @@
     </div>
     <script>
       const dodger = document.getElementById('dodger');
-      dodger.style.backgroundColor='#FF69B4';
-      document.addEventListener('keydown', event=>{
-        var horizPars = dodger.style.left.replace('px', '');
-        var horizPos = parseInt(horizPars, 10);
-        var vertPars = dodger.style.bottom.replace('px', '');
-        var vertPos = parseInt(vertPos, 10);
-        if (event.which === 37) && (left > 0){
-            dodger.style.left = `${horizPos - 1}px`
+      var horizPars = dodger.style.left.replace('px', '');
+      var horizPos = parseInt(horizPars, 10);
+      var vertPars = dodger.style.bottom.replace('px', '');
+      var vertPos = parseInt(vertPos, 10);
+      document.addEventListener('keydown', event=> {
+        if (event.which === 37) && (left > 0) {
+          dodger.style.left = `${horizPos - 5}px`
         };
-        elseif (event.which === 39) && (horizPos < 360){
-          dodger.style.left = `${horizPos + 1}px`
+        elseif (event.which === 39) && (horizPos < 360) {
+          dodger.style.left = `${horizPos + 5}px`
         };
         elseif (event.which === 38) && (vertPos < 360) {
-          dodger.style.bottom = `${vertPos + 1}`
+          dodger.style.bottom = `${vertPos + 5}px`
         };
         elseif (event.which === 40) && (vertPos > 0) {
-          dodger.style.bottom = `${vertPos -1}`
+          dodger.style.bottom = `${vertPos - 5}px`
         };
       })
     </script>
