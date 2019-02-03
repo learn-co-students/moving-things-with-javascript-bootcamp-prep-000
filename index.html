@@ -10,21 +10,23 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      var dodger = document.getElementById('dodger');
+      const dodger = document.getElementById('dodger');
       dodger.style.backgroundColor='#FF69B4';
       document.addEventListener('keydown', event=>{
         if (event.which === 37){
-          var leftNumbers = dodger.style.left.replace('px', '')
-          var left = parseInt(leftNumbers, 10)
-          dodger.style.left = `${left - 1}px`
-        }
-      });
-      document.addEventListener('keydown', event=>{
-        if (event.which === 39){
-          var rightNumbers = dodger.style.right.replace('px', '')
-          var right = parseInt(rightNumbers, 10)
+          var leftNumbers = dodger.style.left.replace('px', '');
+          var left = parseInt(leftNumbers, 10);
+            if (left > 0) {
+              dodger.style.left = `${left - 1}px`
+            };
+        };
+        elseif (event.which === 39){
+          var rightNumbers = dodger.style.right.replace('px', '');
+          var right = parseInt(rightNumbers, 10);
+            if (right < 360) {
           dodger.style.right = `${right + 1}px`
-        }
+            };
+        };
       })
     </script>
   </body>
