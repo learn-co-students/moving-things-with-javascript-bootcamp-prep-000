@@ -14,7 +14,7 @@
       var horizPars = dodger.style.left.replace('px', '');
       var horizPos = parseInt(horizPars, 10);
       var vertPars = dodger.style.bottom.replace('px', '');
-      var vertPos = parseInt(vertPos, 10);
+      var vertPos = parseInt(vertPars, 10);
       document.addEventListener('keydown', event=> {
         if (event.which === 37) && (left > 0) {
           dodger.style.left = `${horizPos - 5}px`
