@@ -10,7 +10,48 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+    var dodger = document.getElementById('dodger');
+    dodger.style.backgroundColor = '#008b00'
+    console.log(dodger.style.left)
+     console.log(dodger.style.bottom)
+    // dodger.style.bottom = "380px"
+    // dodger.style.left = "360px"
+document.addEventListener('keydown', 
+
+function moveDodger (e) {
+  //left
+  if (e.which == 37) {
+    var horizontalNumbers = dodger.style.left.replace('px', '')
+    var left = parseInt(horizontalNumbers, 10)
+    if (left > 0){
+    dodger.style.left = `${left-4}px`
+  }
+  }
+  //right
+  if (e.which == 39) {
+    var horizontalNumbers = dodger.style.left.replace('px', '')
+    var left = parseInt(horizontalNumbers, 10)
+    if (left < 360){
+    dodger.style.left = `${left+4}px`
+}
+}
+//up
+  if (e.which == 38) {
+    var verticalNumbers = dodger.style.bottom.replace('px', '')
+    var bottom = parseInt(verticalNumbers, 10)
+    if (bottom < 380){
+    dodger.style.bottom = `${bottom+4}px`
+}
+}
+//down
+  if (e.which == 40) {
+    var verticalNumbers = dodger.style.bottom.replace('px', '')
+    var bottom = parseInt(verticalNumbers, 10)
+    if (bottom > 0){
+    dodger.style.bottom = `${bottom-4}px`
+}
+}
+})
     </script>
   </body>
 </html>
