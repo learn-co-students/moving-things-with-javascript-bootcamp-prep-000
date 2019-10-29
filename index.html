@@ -10,6 +10,19 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
+    function moveDodgerRight() {
+var rightNumbers = dodger.style.right.replace('px', '')
+var right = parseInt(rightNumbers, 10)
+
+if (right > 0) {
+ dodger.style.left = `${right - 3}px`
+}
+}
+document.addEventListener('keydown', function(e) {
+  if (e.which === 37) {
+    moveDodgerLeft()
+  }
+})
       // your code here
     </script>
   </body>
