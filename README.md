@@ -1,7 +1,7 @@
 Moving Things with JavaScript
 ---
 
-## Objectives
+`## Objectives
 
 1. Explain how to update an element's position on the page
 2. Practice updating an element's position on the page
