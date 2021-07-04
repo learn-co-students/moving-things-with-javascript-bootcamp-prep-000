@@ -10,7 +10,39 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+      var dodger = document.getElementById("dodger")
+      
+      document.addEventListener("keydown", function(e){
+        if(e.key === "ArrowLeft"){
+          moveDodgerLeft()
+        } else if (e.key === "ArrowRight"){
+          moveDodgerRight()
+        }
+      })
+      
+      function moveDodgerLeft(){
+        var leftNumbers = dodger.style.left.replace("px", "")
+        var left = parseInt(leftNumbers, 10)
+        
+        if(left > 0){
+          dodger.style.backgroundColor = "#FFFFFF"
+          dodger.style.left = `${left - 1}px`
+        } else{
+          dodger.style.backgroundColor = "#FF69B4"
+        }
+      }
+      
+      function moveDodgerRight(){
+        var leftNumbers = dodger.style.left.replace("px", "")
+        var left = parseInt(leftNumbers, 10)
+        
+        if(left < 400-40){
+          dodger.style.backgroundColor = "#FFFFFF"
+          dodger.style.left = `${left + 1}px`
+        } else{
+          dodger.style.backgroundColor = "#FF69B4"
+        }
+      }
     </script>
   </body>
 </html>
