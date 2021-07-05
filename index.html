@@ -11,6 +11,51 @@
     </div>
     <script>
       // your code here
+      //var moveSpeed = 2.5;
+      var dodger = document.getElementById('dodger');
+      dodger.style.backgroundColor = '#FF69B4';
+      dodger.style.left;  // sets it to 180px to the left
+      dodger.style.bottom = '0px';  // sets it to 0px on the bottom
+      
+      function moveRight()
+      {
+        var rightNumbers = dodger.style.left.replace('px', '');
+        var right = parseInt(rightNumbers)
+        dodger.style.left = `${right + 1}px`
+        if(dodger.style.left >= '360px')  // normally i'd check for the screen size, but this is just for practice
+        {
+          dodger.style.left = `360px`;
+        }
+        console.log(rightNumbers);
+        
+      }
+      
+      function moveLeft()
+      {
+          var leftNumbers = dodger.style.left.replace('px' , '');
+          var left = parseInt(leftNumbers, 10);
+          dodger.style.left = `${left - 1}px`;
+          
+          if(left < 0)
+          {
+            dodger.style.left = `0px`
+          }
+          console.log(left);
+      }
+      
+      // listener-controller
+      document.addEventListener('keydown' , function(e)
+      {
+        //console.log(e.which);
+        if(e.which == 37 || e.which == 65)
+        {
+          moveLeft();
+        }
+        if(e.which == 39 || e.which == 68)
+        {
+          moveRight();
+        }
+      });
     </script>
   </body>
 </html>
