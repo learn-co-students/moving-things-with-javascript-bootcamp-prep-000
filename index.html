@@ -10,7 +10,23 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+      var dodger = document.getElementById('dodger')
+      dodger.style.backgroundColor = '#FF69B40'
+      dodger.style.bottom = '0px'
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.which === 37) {
+          var left_nums = dodger.style.left.replace('px', '')
+          var left = parseInt(left_nums, 10)
+          dodger.style.left = `${left - 1}px`
+        }
+        if (e.which === 39) {
+          var left_nums = dodger.style.left.replace('px', '')
+          var left = parseInt(left_nums, 10)
+          dodger.style.left = `${left + 1}px`
+        }
+      })
+      
     </script>
   </body>
 </html>
