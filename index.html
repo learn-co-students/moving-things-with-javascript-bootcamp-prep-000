@@ -11,6 +11,16 @@
     </div>
     <script>
       // your code here
+      var dodger = querySelector('#dodger');
+      
+      function moveDodgerRight(){
+        var rightNumbers = dodger.style.right.replace('px', '')
+        var right = parseInt(leftNumbers, 10)
+        
+        if(right > 0){
+          dodger.style.right ='$(left + 1)px'
+        }
+      }
     </script>
   </body>
 </html>
