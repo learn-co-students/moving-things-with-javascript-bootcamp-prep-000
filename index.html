@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Rock Dodger! (Beta)</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-  </head>
 
-  <body>
-    <div id="game">
-      <div id="dodger" style="bottom: 0px; left: 180px;"></div>
-    </div>
-    <script>
-      // your code here
-    </script>
-  </body>
+<head>
+  <title>Rock Dodger! (Beta)</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+  <div id="game">
+    <div id="dodger" style="bottom: 0px; left: 180px;"></div>
+  </div>
+  <script>
+    var dodger = document.getElementById('dodger');
+    dodger.style.backgroundColor = '#FF69B4';
+    document.addEventListener('keydown', function (e) {
+      if (e.which === 37) {
+        var leftNumbers = dodger.style.left.replace('px', '');
+        var left = parseInt(leftNumbers, 10);
+        if (left > 0) {
+          dodger.style.left = `${left - 1}px`;
+        }
+      }
+      if (e.which === 39) {
+        var leftNumbers = dodger.style.left.replace('px', '');
+        var left = parseInt(leftNumbers, 10);
+        if (left < 360) {
+          dodger.style.left = `${left + 1}px`;
+        }
+      }
+      if (e.which === 38) {
+        var upNumbers = dodger.style.bottom.replace('px', '');
+        var up = parseInt(upNumbers, 10);
+        if (up < 380) {
+          dodger.style.bottom = `${up + 1}px`;
+        }
+      }
+      if (e.which === 40) {
+
+        var downNumbers = dodger.style.bottom.replace('px', '');
+        var down = parseInt(downNumbers, 10);
+        if (down > 0) {
+          dodger.style.bottom = `${down - 1}px`;
+        }
+      }
+
+    });
+
+  </script>
+</body>
+
 </html>
