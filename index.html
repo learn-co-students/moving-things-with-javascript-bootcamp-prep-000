@@ -10,7 +10,25 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+      var dodger = document.getElementById('dodger');
+      var horizPars = dodger.style.left.replace('px', '');
+      var horizPos = parseInt(horizPars, 10);
+      var vertPars = dodger.style.bottom.replace('px', '');
+      var vertPos = parseInt(vertPars, 10);
+      document.addEventListener('keydown', event=> {
+        if (event.which === 37) && (horizPos >= 0) {
+          dodger.style.left = `${horizPos - 5}px`
+        };
+        elseif (event.which === 39) && (horizPos <= 400) {
+          dodger.style.left = `${horizPos + 5}px`
+        };
+        elseif (event.which === 38) && (vertPos <= 400) {
+          dodger.style.bottom = `${vertPos + 5}px`
+        };
+        elseif (event.which === 40) && (vertPos >= 0) {
+          dodger.style.bottom = `${vertPos - 5}px`
+        };
+      });
     </script>
   </body>
 </html>
