@@ -10,7 +10,37 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+    
+      var dodger = document.getElementById('dodger');
+      dodger.style.backgroundColor = '#FF69B4';
+      
+      document.addEventListener('keydown', function(e){
+        //alert(e.which);
+        if (e.which === 37){
+          moveLeft();
+          
+        }
+        if (e.which === 39){
+          
+          moveRight();
+        }
+      });
+      
+      function moveLeft(){
+        var dodgerLCorner = dodger.style.left.replace('px', '');
+        dodgerLCorner = parseInt(dodgerLCorner, 10);
+        
+        if (dodgerLCorner > 0) {
+          dodger.style.left = `${dodgerLCorner - 1}px` 
+        }
+      }
+      function moveRight(){
+        var leftCorner = dodger.style.left.replace('px','');
+        leftCorner = parseInt(leftCorner, 10);
+        if(leftCorner < 360) {
+          dodger.style.left = `${leftCorner + 1}px`;
+        }
+      }
     </script>
   </body>
 </html>
