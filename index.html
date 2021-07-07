@@ -10,7 +10,56 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+    var dodger = document.getElementById('dodger');
+    
+function moveDodgerLeft() {
+   var leftNumbers = dodger.style.left.replace('px', '');
+     var left = parseInt(leftNumbers, 10)
+
+  if (left > 0) {
+    dodger.style.left = `${left - 1}px`
+  }
+}
+function moveDodgerright()
+{
+
+  var leftNumbers = dodger.style.left.replace('px', '');
+     var left = parseInt(leftNumbers, 10)
+    
+  
+  if(left < 360 )
+  {
+    dodger.style.left = `${left + 1}px`;
+  }
+  
+}
+
+function moveDogerUp()
+{
+  var bottomPosition = dodger.style.bottom.replace('px', '');
+  
+  var btm = parseInt(bottomPosition, 10);
+  
+  if(btm < 360)
+  {
+    dodger.style.bottom = `${btm + 1}px`;
+  }
+}
+
+
+document.addEventListener('keydown', function(e){
+  if(e.which === 37){
+    moveDodgerLeft();
+    
+  }else if( e.which === 39)
+  {
+    moveDodgerright();
+  }else if(e.which === 38){
+    moveDogerUp();
+  }
+  
+})
+      
     </script>
   </body>
 </html>
