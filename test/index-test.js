@@ -11,6 +11,11 @@ describe('index', () => {
     src: fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8')
   })
 
+  document.addEventListener('keydown', function(e) {
+    if (e.which === 37) {
+      moveDodgerLeft()
+    }
+  })
 
   it('runs', () => {
     expect(true).toBe.true
