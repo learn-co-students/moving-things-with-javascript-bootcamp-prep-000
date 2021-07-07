@@ -11,6 +11,23 @@
     </div>
     <script>
       // your code here
+      var dodger = document.getElementById('dodger')
+      dodger.style.background("#FF69B4")
+      
+      document.addEventListener('keydown', 
+      function(e) {
+        console.log(e.which)
+        if (e.key === 'a') {
+          var leftNumbers = dodger.style.left.replace('px','')
+          var left = parseInt(leftNumbers, 10)
+          doger.style.left = `${left - 1}px`
+        }
+        else if (e.key === 'd') {
+          var rightNumbers = dodger.style.left.replace('px','')
+          var right = parseInt(rightNumbers, 10)
+          doger.style.left = `${right + 1}px`
+        }
+      })
     </script>
   </body>
 </html>
