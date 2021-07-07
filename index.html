@@ -9,8 +9,24 @@
     <div id="game">
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
+    
     <script>
       // your code here
+      var dodger = document.getElementById('dodger')
+
+      function moveDodgerLeft(){
+        var leftNum = dodger.style.left.replace('px','')
+        var left = parseInt(leftNum, 10)
+        if(left > 0){
+          dodger.style.left = `${left}px`
+        }
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if (e.which === 37) {
+          moveDodgerLeft()
+        }
+      })
     </script>
   </body>
 </html>
